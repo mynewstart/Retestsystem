@@ -1,0 +1,17 @@
+/* 导航条设置、去边框，字体颜色 */
+.navbar-inverse {
+	background:#00712F;
+	border:none;
+	color:#FFFFFF;
+}
+
+.table tbody tr td{
+	vertical-align: middle;
+	text-align: center;
+}
+
+.row tr th{
+	vertical-align: middle;
+	text-align: center;
+}
+

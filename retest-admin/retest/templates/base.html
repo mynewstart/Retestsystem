@@ -1,0 +1,48 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}华中农业大学食品科学与技术学院研究生考试复试系统{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/base.css')}}">
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse col-xs-12" id="navbar_test_paper">
+        <div class="container-fluid">
+            <div class="navbar-header" id="navbar-id">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index">研究生考试复试系统</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/question">考生抽题</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="#">欢迎 {{ current_user.get_id() }} </a></li>
+                        <li><a href="#">角色：考生</a> </li>
+                        <li><a href="/logout">退出</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block page_content %}{% endblock %}
+    </div>
+
+    <footer class="footer navbar-fixed-bottom ">
+    <div class="container">
+        <span>CopyRight@copy2019</span>
+    </div>
+</footer>
+{% endblock %}
